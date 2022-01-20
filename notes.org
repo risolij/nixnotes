@@ -1,0 +1,16 @@
+* Quick way to build a vm
+The command below will launch a temppc with network manager enabled
+  #+begin_src sh
+    nixos-build-vms vm.nix
+  #+end_src
+
+  Try the following as well
+  #+begin_src sh
+    nix run vm
+    nix run vm -f $nixpkgs_path/nixos --arg configuration "$PWD"/configuration.nix -c run-nixos-vm
+  #+end_src
+
+  and the following
+  #+begin_src sh
+    nix-build '<nixpkgs/nixos>' -A vm --arg configuration ./tde-host.nix
+  #+end_src
